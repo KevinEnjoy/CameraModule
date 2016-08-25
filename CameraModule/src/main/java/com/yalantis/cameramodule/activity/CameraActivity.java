@@ -28,6 +28,7 @@ import android.media.ExifInterface;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.Toast;
 import com.yalantis.cameramodule.CameraConst;
@@ -119,6 +120,7 @@ public class CameraActivity extends BaseActivity implements PhotoTakenCallback, 
 
     @Override
     public void photoTaken(byte[] data, int orientation) {
+        Log.e("photoTaken: ","start photoTaken" );
         savePhoto(data, createName(), path, orientation);
     }
 
@@ -148,7 +150,15 @@ public class CameraActivity extends BaseActivity implements PhotoTakenCallback, 
         }
     }
 
+    private void openCorpPreview(String path, String name){
+        Intent intent = new Intent(this, PhotoCropActivity.class);
+        intent.putExtra(BasePhotoActivity.EXTRAS.PATH, path);
+        intent.putExtra(BasePhotoActivity.EXTRAS.NAME, name);
+        startActivityForResult(intent, BasePhotoActivity.EXTRAS.REQUEST_PHOTO_EDIT);
+    }
+
     private void openPreview(String path, String name) {
+
         Intent intent = new Intent(this, PhotoPreviewActivity.class);
         intent.putExtra(BasePhotoActivity.EXTRAS.PATH, path);
         intent.putExtra(BasePhotoActivity.EXTRAS.NAME, name);

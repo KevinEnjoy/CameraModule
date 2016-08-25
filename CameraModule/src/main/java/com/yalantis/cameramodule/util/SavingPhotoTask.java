@@ -35,6 +35,7 @@ import android.graphics.Matrix;
 import android.media.ExifInterface;
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.util.Log;
 
 import com.yalantis.cameramodule.CameraConst;
 import com.yalantis.cameramodule.interfaces.PhotoSavedListener;
@@ -129,6 +130,8 @@ public class SavingPhotoTask extends AsyncTask<Void, Void, File> {
     }
 
     private void photoSaved(File photo) {
+
+        Log.e("photoTaken: ","end photoTaken" );
         if (photo != null) {
             if (callback != null) {
                 callback.photoSaved(photo.getPath(), photo.getName());

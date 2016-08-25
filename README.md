@@ -2,9 +2,19 @@ CameraModule
 ============
 Camera module for Android applications.
 
+
+
+```
+修改说明：
+
+这个库拍照之后，保存图片需要的时间太长了。
+
+```
+
+
 Screenshots:
 https://www.dropbox.com/sh/2d7svoykpwpwmbw/AAAveLqvtaJ2Zt5NHaEu3-QSa
-
+![](https://www.dropbox.com/sh/2d7svoykpwpwmbw/AAAveLqvtaJ2Zt5NHaEu3-QSa)
 Usage
 --------
 In your Application class call managers initializer:

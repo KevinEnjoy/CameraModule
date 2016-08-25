@@ -505,6 +505,7 @@ public class CameraFragment extends com.yalantis.cameramodule.fragment.BaseFragm
 
     @Override
     public void takePhoto() {
+
         mCapture.setEnabled(false);
         mCapture.setVisibility(View.INVISIBLE);
         if (progressBar != null) {
